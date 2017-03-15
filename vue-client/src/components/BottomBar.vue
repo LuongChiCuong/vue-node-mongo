@@ -1,21 +1,31 @@
 <template>
   <div class="row">
     <div class="col m12 center black bottom-nav">
-      <span v-on:click="filterBy(html)">{{html}}</span>
-      <span v-on:click="filterBy(all)">{{all}}</span>
-      <span v-on:click="filterBy(js)">{{js}}</span>
+      <ul class="bottom-tag-list">
+        <li v-for="tag in tags">
+            <span v-on:click="filterBy(tag.name)">{{tag.name}}</span>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
 
 <script>
+var tagsData = [
+  {name: 'All'},
+  {name: 'HTML/CSS'},
+  {name: 'JS'},
+  {name: 'AngularJS'},
+  {name: 'VueJS'},
+  {name: 'NodeJS'},
+  {name: 'Awwwards'}
+]
+
 export default {
   name: 'bottomBar',
   data () {
     return {
-      html: 'HTML/CSS',
-      all: 'All',
-      js: 'JS'
+      tags: tagsData
     }
   },
   methods: {
@@ -32,6 +42,19 @@ export default {
     position: fixed;
     bottom: 0;
     color: white;
-    height: 25px;
+    height: 30px;
+  }
+  .bottom-tag-list {
+    height: 30px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+  }
+  .bottom-tag-list li {
+    margin: 0 20px;
+    color: #64ffda;
+    cursor: pointer;
   }
 </style>

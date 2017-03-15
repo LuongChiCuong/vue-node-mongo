@@ -1,19 +1,24 @@
 <template>
-  <div class="row">
-    <nav>
-      <div class="nav-wrapper white grey-text text-darken-4">
-        <a href="#!" class="brand-logo center grey-text text-darken-4">{{logo}}</a>
-        <div class="skew-bg"></div>
-        <div v-on:click="clickMenu" class="menu left grey-text text-darken-4">
-          <div class="icon-hamburger">
-            <span class="top-line"></span>
-            <span class="mid-line"></span>
-            <span class="bot-line"></span>
+  <header>
+    <div class="row">
+      <nav>
+        <div class="nav-wrapper white grey-text text-darken-4">
+          <a href="#!" class="brand-logo center grey-text text-darken-4" :class="{active: activeMenu}">{{logo}}</a>
+          <!-- <div class="skew-bg"></div> -->
+          <div v-on:click="clickMenu" class="menu left grey-text text-darken-4" :class="{active: activeMenu}">
+            <div class="icon-hamburger">
+              <span class="top-line"></span>
+              <span class="mid-line"></span>
+              <span class="bot-line"></span>
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
-  </div>
+      </nav>
+    </div>
+    <div class="valign-wrapper menu-content" :class="{active: activeMenu}">
+      <h5 class="valign">Menu content</h5>
+    </div>
+  </header>
 </template>
 
 <script>
@@ -21,15 +26,17 @@ export default {
   name: 'navigation',
   data () {
     return {
-      logo: 'CreativeLang'
+      logo: 'CreativeLang',
+      activeMenu: false
     }
   },
   // define methods under the `methods` object
   methods: {
     clickMenu: function (event) {
-      var $ = require('jquery')
-      console.log($(this))
-      $('.menu').toggleClass('active')
+      this.activeMenu = !this.activeMenu
+      // var $ = require('jquery')
+      // $('.menu').toggleClass('active')
+      // $('.menu-content').toggleClass('active')
       // this.addClass('active');
     }
   }
@@ -40,13 +47,22 @@ export default {
   nav {
     position: relative;
   }
+  /*logo style*/
+  .brand-logo {
+    z-index: 19;
+  }
+  .brand-logo.active {
+    color: #64ffda !important;
+    -webkit-transition: color 1s ease-in-out;
+    transition: color 1s ease-in-out;
+  }
   /*skew background*/
   .skew-bg {
     position: absolute;
     height: 100%;
     width: 100px;
     background-color: black;
-    z-index: 1;
+    z-index: 11;
     -webkit-transform: skew(-45deg);
     -ms-transform: skew(-45deg);
     transform: skew(-45deg);
@@ -57,7 +73,7 @@ export default {
     width: 60px;
     cursor: pointer;
     overflow: hidden;
-    z-index: 9;
+    z-index: 19;
     position: relative;
     -webkit-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
@@ -89,7 +105,8 @@ export default {
     align-self: flex-start;
     height: 2px;
     width: 100%;
-    background-color: #64ffda;
+    /*background-color: #64ffda;*/
+    background-color: black;
     position: relative;
     top: 0;
     -webkit-transform: rotate(0);
@@ -102,6 +119,7 @@ export default {
   /*on click on menu */
   .menu.active .top-line {
     top: 6px;
+    background-color: #64ffda;
     transform: rotate(45deg);
     -webkit-transition: top .3s ease-in-out, -webkit-transform .3s ease-in-out .3s;
     transition: top .3s ease-in-out, transform .3s ease-in-out .3s, -webkit-transform .3s ease-in-out .3s;
@@ -115,7 +133,8 @@ export default {
     -ms-flex-item-align: start;
     align-self: flex-start;
     height: 2px;
-    background-color: #64ffda;
+    /*background-color: #64ffda;*/
+    background-color: black;
     position: relative;
     top: 0;
     -webkit-transform: rotate(0);
@@ -128,6 +147,7 @@ export default {
   /*on click on menu */
   .menu.active .mid-line {
     opacity: 0;
+    background-color: #64ffda;
     -webkit-transition: opacity 0s ease-in-out .3s;
     transition: opacity 0s ease-in-out .3s;
   }
@@ -139,7 +159,8 @@ export default {
     -ms-flex-item-align: start;
     align-self: flex-start;
     height: 2px;
-    background-color: #64ffda;
+    /*background-color: #64ffda;*/
+    background-color: black;
     position: relative;
     top: 0;
     -webkit-transform: rotate(0);
@@ -152,8 +173,33 @@ export default {
   /*on click on menu */
   .menu.active .bot-line {
     top: -6px;
+    background-color: #64ffda;
     transform: rotate(-45deg);
     -webkit-transition: top .3s ease-in-out,-webkit-transform .3s ease-in-out .3s;
     transition: top .3s ease-in-out,transform .3s ease-in-out .3s,-webkit-transform .3s ease-in-out .3s;
+  }
+  /*menu content*/
+  .menu-content {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    background: black;
+    z-index: 15;
+    opacity: 0;
+    left: -100%;
+    -webkit-transition: all .3s ease-in-out, left .3s ease-in-out;
+    transition: all .3s ease-in-out, left .3s ease-in-out;
+    /*transition*/
+    /*-webkit-transition: all .4s ease-in-out, top .3s ease-in-out .3s, -webkit-transform .3s ease-in-out;
+    transition: all .4s ease-in-out,transform .3s ease-in-out, top .3s ease-in-out .3s, -webkit-transform .3s ease-in-out;*/
+  }
+
+  .menu-content.active {
+    opacity: 1;
+    left: 0;
+    /*transition*/
+    -webkit-transition: opacity .3s ease-in-out, left .5s ease-in-out;
+    transition: opacity .3s ease-in-out, left .5s ease-in-out;
   }
 </style>
