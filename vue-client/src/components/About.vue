@@ -16,11 +16,45 @@
     </div>
     <div class="container center-align">
       <div class="row">
-        <div class="introduce-content col m6 offset-m3">
+        <div class="introduce-content col m8 offset-m2">
           <h3>Who I am?</h3>
-          <p>what is the fox say cuong cuong cuong cuong ucong cuong cuong cuong cuong cuong cuong cuongcuong cuong cuong ucong uocng</p>
+          <p>
+              My name is Cuong, with a special passion for <mark><b>Front End Developer</b></mark>.</br>
+              I created this website with the purpose of sharing my knowledge and passion for everyone.</br>
+              My target is to become a <mark><b>creative front end</b></mark>, why? Because I want to directly develop ideas with <mark>my creativity</mark>,
+              I do not want to be limited in thinking and only following designers or marketing.</br>
+              If you also like <mark>Front End</mark>, we will prove to the fucking developers who think FE is simple and easy that <mark><b>FE is an art</b></mark>.
+          </p>
         </div>
       </div>
+    </div>
+    <div class="social center-align grey darken-4">
+        <div class="skew-bg grey darken-4">&nbsp;</div>
+        <div class="social-content container">
+            <div class="row">
+                <div class="col m12 white-text">
+                    <h4>Contact Me</h4>
+                    <ul>
+                        <li>
+                            <i class="small material-icons">my_location</i>
+                            <span>108/14H Thich Quang Duc, Ward 5, Phu Nhuan District</span>
+                        </li>
+                        <li>
+                            <i class="small material-icons">my_location</i>
+                            <span>108/14H Thich Quang Duc, Ward 5, Phu Nhuan District</span>
+                        </li>
+                        <li>
+                            <i class="small material-icons">my_location</i>
+                            <span>+84-937-422-456</span>
+                        </li>
+                    </ul>
+                    <div class="social-link">
+                        <a class="teal-text text-accent-2" href="#">Facebook</a>
+                        <a class="teal-text text-accent-2" href="#">Quora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 </template>
@@ -84,6 +118,30 @@
     margin: 0 auto 2rem;
   }
   .introduce-content p {
-    font-size: 2.5rem;
+    font-size: 2.0rem;
+  }
+  .introduce-content p mark{
+    background-color: #64ffda;
+  }
+
+  .social {
+      position: relative;
+      margin-top: 100px;
+  }
+  .social h4 {
+      font-size: 1.5rem;
+
+  }
+  .social .skew-bg {
+      position: absolute;
+      top: -56px;
+      width: 100%;
+      height: 112px;
+      z-index: -1;
+      -webkit-transform: skewY(-5deg);
+      transform: skewY(-5deg);
+  }
+  .social .social-content {
+    height: 200px;
   }
 </style>
