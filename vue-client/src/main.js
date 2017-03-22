@@ -6,6 +6,7 @@ import Resource from 'vue-resource'
 import App from './App'
 import CompList from './components/List'
 import CompAbout from './components/About'
+import CompContact from './components/Contact'
 
 Vue.use(VueRouter)
 Vue.use(Resource)
@@ -14,7 +15,8 @@ const router = new VueRouter({
   routes: [
     { path: '/', name: 'app', component: App },
     { path: '/list', name: 'list', component: CompList },
-    { path: '/about', name: 'about', component: CompAbout }
+    { path: '/about', name: 'about', component: CompAbout },
+    { path: '/contact', name: 'contact', component: CompContact }
   ]
 })
 /* eslint-disable no-new */

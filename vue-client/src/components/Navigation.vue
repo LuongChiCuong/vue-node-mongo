@@ -16,7 +16,27 @@
       </nav>
     </div>
     <div class="valign-wrapper menu-content" :class="{active: activeMenu}">
-      <h5 class="valign">Menu content</h5>
+      <ul class="valign">
+        <li>
+          <router-link class="link-item" :to="{ name: 'app'}">Home
+            <span class="link-layer" data-text="Home"></span>
+          </router-link>
+        </li>
+        <li>
+          <router-link class="link-item" :to="{ name: 'list'}">Awesome Bookmarks</router-link>
+          <span class="link-layer" data-text="Awesome Bookmarks"></span>
+        </li>
+        <li>
+          <router-link class="link-item" :to="{ name: 'about'}">About
+            <span class="link-layer" data-text="About"></span>
+          </router-link>
+        </li>
+        <li>
+          <router-link class="link-item" :to="{ name: 'contact'}">Contact
+            <span class="link-layer" data-text="Contact"></span>
+          </router-link>
+        </li>
+      </ul>
     </div>
   </header>
 </template>
@@ -194,12 +214,74 @@ export default {
     /*-webkit-transition: all .4s ease-in-out, top .3s ease-in-out .3s, -webkit-transform .3s ease-in-out;
     transition: all .4s ease-in-out,transform .3s ease-in-out, top .3s ease-in-out .3s, -webkit-transform .3s ease-in-out;*/
   }
-
   .menu-content.active {
     opacity: 1;
     left: 0;
     /*transition*/
     -webkit-transition: opacity .3s ease-in-out, left .5s ease-in-out;
     transition: opacity .3s ease-in-out, left .5s ease-in-out;
+  }
+  .menu-content ul li {
+    color: #64ffda;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    margin-left: 100px;
+  }
+  .menu-content ul li a{
+    color: white;
+    -webkit-transition: color .3s;
+    transition: color .3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .link-item .link-layer, .link-item .link-layer:before  {
+    background-color: #000;
+    width: 100%;
+    display: block;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  .link-item .link-layer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    -webkit-transform: translate3d(-100%,0,0);
+    transform: translate3d(-100%,0,0);
+    -webkit-animation: anim-out-layer .3s ease-out;
+  }
+  .link-item .link-layer::before {
+    content: attr(data-text);
+    -webkit-transform: translate3d(100%,0,0);
+    transform: translate3d(100%,0,0);
+    color: #64ffda;
+    -webkit-animation: anim-out-text .3s ease-out;
+    animation: anim-out-text .3s ease-out;
+  }
+
+  @-webkit-keyframes anim-in-text {
+      0% {
+        -webkit-transform:translate3d(100%,0,0);
+        transform:translate3d(100%,0,0)
+      }
+      to {
+        -webkit-transform:translateZ(0);
+        transform:translateZ(0)
+      }
+  }
+  @keyframes anim-in-text {
+      0% {
+        -webkit-transform:translate3d(100%,0,0);
+        transform:translate3d(100%,0,0)
+      }
+      to {
+        -webkit-transform:translateZ(0);
+        transform:translateZ(0)
+      }
+  }
+  .link-item:hover .link-layer::before {
+    -webkit-animation: anim-in-text .3s ease forwards;
+    animation: anim-in-text .3s ease forwards;
   }
 </style>

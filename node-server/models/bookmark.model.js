@@ -10,4 +10,6 @@ var BookmarkSchema = new Schema({
   }]
 });
 
+BookmarkSchema.index({title: 'text'});
+
 mongoose.model('Bookmark', BookmarkSchema);

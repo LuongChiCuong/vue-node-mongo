@@ -28,43 +28,16 @@
         </div>
       </div>
     </div>
-    <div class="social center-align grey darken-4">
-        <div class="skew-bg grey darken-4">&nbsp;</div>
-        <div class="social-content container">
-            <div class="row">
-                <div class="col m12 white-text">
-                    <h4>Contact Me</h4>
-                    <ul>
-                        <li>
-                            <i class="small material-icons">my_location</i>
-                            <span>108/14H Thich Quang Duc, Ward 5, Phu Nhuan District</span>
-                        </li>
-                        <li>
-                            <i class="small material-icons">my_location</i>
-                            <span>108/14H Thich Quang Duc, Ward 5, Phu Nhuan District</span>
-                        </li>
-                        <li>
-                            <i class="small material-icons">my_location</i>
-                            <span>+84-937-422-456</span>
-                        </li>
-                    </ul>
-                    <div class="social-link">
-                        <a class="teal-text text-accent-2" href="#">Facebook</a>
-                        <a class="teal-text text-accent-2" href="#">Quora</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <FooterSection></footerSection>
 </div>
 </template>
 <script>
   import Navigation from './Navigation'
-
+  import FooterSection from './FooterSection'
   export default {
     name: 'About',
     components: {
-      Navigation
+      Navigation, FooterSection
     }
   }
 </script>
@@ -122,26 +95,5 @@
   }
   .introduce-content p mark{
     background-color: #64ffda;
-  }
-
-  .social {
-      position: relative;
-      margin-top: 100px;
-  }
-  .social h4 {
-      font-size: 1.5rem;
-
-  }
-  .social .skew-bg {
-      position: absolute;
-      top: -56px;
-      width: 100%;
-      height: 112px;
-      z-index: -1;
-      -webkit-transform: skewY(-5deg);
-      transform: skewY(-5deg);
-  }
-  .social .social-content {
-    height: 200px;
   }
 </style>

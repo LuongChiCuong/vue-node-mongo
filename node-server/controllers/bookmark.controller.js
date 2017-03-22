@@ -36,3 +36,26 @@ exports.find = (req, res, next) => {
     res.json(bms);
   })
 }
+
+exports.findText = (req, res, next) => {
+  // Bookmark.find(
+  //   {$text: { $search: req.body.query }},
+  //   {score: { $meta: "queryScore" }},
+  //   (err, result) => {
+  //     if (err) return console.error(err);
+  //     res.json(result);
+  // }).sort(
+  //   { score: { $meta: "queryScore" }}
+  // )
+
+  Bookmark.find(
+    {$text: { $search: req.body.query }},
+    {score: { $meta: "queryScore" }},
+    (err, result) => {
+        if (err) return console.error(err);
+        res.json(result);
+    }
+  ).sort(
+    { score: { $meta: "queryScore" }}
+  )
+}
