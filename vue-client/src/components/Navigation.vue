@@ -23,8 +23,9 @@
           </router-link>
         </li>
         <li>
-          <router-link class="link-item" :to="{ name: 'list'}">Awesome Bookmarks</router-link>
-          <span class="link-layer" data-text="Awesome Bookmarks"></span>
+          <router-link class="link-item" :to="{ name: 'list'}">Bookmarks
+            <span class="link-layer" data-text="Bookmarks"></span>
+          </router-link>
         </li>
         <li>
           <router-link class="link-item" :to="{ name: 'about'}">About
@@ -235,6 +236,91 @@ export default {
     overflow: hidden;
   }
 
+  /*animation each link in nav content*/
+  /*---------------------------animation out--------------------------------*/
+  @-web-kit-keyframes anim-out-layer {
+    0% {
+      -webkit-transform:translateZ(0);
+      transform:translateZ(0)
+    }
+    to {
+      -webkit-transform:translate3d(-100%,0,0);
+      transform:translate3d(-100%,0,0)
+    }
+  }
+  @keyframes anim-out-layer {
+    0% {
+      -webkit-transform:translateZ(0);
+      transform:translateZ(0)
+    }
+    to {
+      -webkit-transform:translate3d(-100%,0,0);
+      transform:translate3d(-100%,0,0)
+    }
+  }
+
+  @-web-kit-keyframes anim-out-text {
+    0% {
+      -webkit-transform:translateZ(0);
+      transform:translateZ(0)
+    }
+    to {
+      -webkit-transform:translate3d(100%,0,0);
+      transform:translate3d(100%,0,0)
+    }
+  }
+  @keyframes anim-out-text {
+    0% {
+      -webkit-transform:translateZ(0);
+      transform:translateZ(0)
+    }
+    to {
+      -webkit-transform:translate3d(100%,0,0);
+      transform:translate3d(100%,0,0)
+    }
+  }
+  /*---------------------------animation in---------------------------------*/
+  @-webkit-keyframes anim-in-text {
+      0% {
+        -webkit-transform:translate3d(100%,0,0);
+        transform:translate3d(100%,0,0)
+      }
+      to {
+        -webkit-transform:translateZ(0);
+        transform:translateZ(0)
+      }
+  }
+  @keyframes anim-in-text {
+      0% {
+        -webkit-transform:translate3d(100%,0,0);
+        transform:translate3d(100%,0,0)
+      }
+      to {
+        -webkit-transform:translateZ(0);
+        transform:translateZ(0)
+      }
+  }
+  @-web-kit-keyframes anim-in-layer {
+    0% {
+      -webkit-transform:translate3d(-100%,0,0);
+      transform:translate3d(-100%,0,0)
+    }
+    to {
+      -webkit-transform:translateZ(0);
+      transform:translateZ(0)
+    }
+  }
+  @keyframes anim-in-layer {
+    0% {
+      -webkit-transform:translate3d(-100%,0,0);
+      transform:translate3d(-100%,0,0)
+    }
+    to {
+      -webkit-transform:translateZ(0);
+      transform:translateZ(0)
+    }
+  }
+
   .link-item .link-layer, .link-item .link-layer:before  {
     background-color: #000;
     width: 100%;
@@ -259,29 +345,12 @@ export default {
     -webkit-animation: anim-out-text .3s ease-out;
     animation: anim-out-text .3s ease-out;
   }
-
-  @-webkit-keyframes anim-in-text {
-      0% {
-        -webkit-transform:translate3d(100%,0,0);
-        transform:translate3d(100%,0,0)
-      }
-      to {
-        -webkit-transform:translateZ(0);
-        transform:translateZ(0)
-      }
-  }
-  @keyframes anim-in-text {
-      0% {
-        -webkit-transform:translate3d(100%,0,0);
-        transform:translate3d(100%,0,0)
-      }
-      to {
-        -webkit-transform:translateZ(0);
-        transform:translateZ(0)
-      }
-  }
-  .link-item:hover .link-layer::before {
+  .link-item:hover > .link-layer::before {
     -webkit-animation: anim-in-text .3s ease forwards;
     animation: anim-in-text .3s ease forwards;
+  }
+  .link-item:hover > .link-layer {
+    -webkit-animation: anim-in-layer .3s ease forwards;
+    animation: anim-in-layer .3s ease forwards;
   }
 </style>
