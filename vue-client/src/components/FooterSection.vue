@@ -26,7 +26,7 @@
           </div>
       </div>
       <div class="made-by center-align white">
-        <p>Made with <b class="heart">&#10084;</b> by luongchicuong93@gmail.com - Powered by VueJS - NodeJS - MongoDB</p>
+        <p>Made with <b class="heart">&#10084;</b> by luongchicuong93@gmail.com - Powered by VueJS - NodeJS - MongoDB - WebPack</p>
       </div>
   </footer>
 </template>
