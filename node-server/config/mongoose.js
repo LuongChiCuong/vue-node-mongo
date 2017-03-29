@@ -15,7 +15,8 @@ module.exports = function() {
   });
 
   require('../models/bookmark.model');
+  require('../models/ebook.model');
 
   return db;
-  
+
 }

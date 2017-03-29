@@ -36,6 +36,11 @@
           </router-link>
         </li>
         <li>
+          <router-link class="link-item" :to="{ name: 'ebook'}">Ebooks
+            <span class="link-layer" data-text="Ebooks"></span>
+          </router-link>
+        </li>
+        <li>
           <router-link class="link-item" :to="{ name: 'about'}">About
             <span class="link-layer" data-text="About"></span>
           </router-link>

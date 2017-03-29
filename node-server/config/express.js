@@ -49,6 +49,7 @@ module.exports = function() {
 
   require('../routes/index.route.js') (app);
   require('../routes/bookmark.route.js') (app);
+  require('../routes/ebook.route.js') (app);
 
   app.use(express.static('public'));
 
