@@ -18,30 +18,34 @@ export default {
 }
 </script>
 
-<style>
-html,body{
-  margin:0;
-  padding:0;
-  width:100%;
-  height:100%;
-  -webkit-user-select: none; /* Chrome/Safari */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* IE10+ */
+<style lang="less">
+  @font-face {
+    font-family: Bellico;
+    src: url("./assets/Bellico.ttf");
+  }
+  html,body {
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+    -webkit-user-select: none; /* Chrome/Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
 
-  /* Rules below not implemented in browsers yet */
-  -o-user-select: none;
-  user-select: none;
-}
+    /* Rules below not implemented in browsers yet */
+    -o-user-select: none;
+    user-select: none;
+    #app {
+      font-family: 'Avenir', Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-align: center;
+      color: #2c3e50;
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100%;
+    }
+  }
 
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin: 0;
-  padding: 0;
-  width: 100vw;
-  height: 100%;
-}
 </style>

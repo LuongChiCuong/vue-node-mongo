@@ -11,26 +11,22 @@
         <div class="underline center-align">
             <span>&nbsp;</span>
         </div>
-        <!-- <div class="ebook-content col m4">
-          <img class="avatar" src="../assets/avatar.jpg" alt="Cuong Luong"/>
-        </div> -->
       </div>
-      <div class="row">
-          <ul>
-              <li class="col s12 m3 l2 book-content" v-for="book in ebooks">
-                  <img :src="require(`../assets/img/${book.img}`)" :alt="book.title">
-                  <b>{{book.title}}</b>
-              </li>
-          </ul>
+      <div class="row list-book">
+        <ul>
+            <li class="col s12 m3 l2 book-content center-align" v-for="book in ebooks">
+                <img :src="require(`../assets/img/${book.img}`)" :alt="book.title" class="cover-book">
+                <b class="title">{{book.title}}</b>
+            </li>
+        </ul>
       </div>
     </div>
-    <div class="made-by center-align white">
-      <p>Made with <b class="heart">&#10084;</b> by luongchicuong93@gmail.com - Powered by VueJS - NodeJS - MongoDB</p>
-    </div>
+    <FooterSection></FooterSection>
 </div>
 </template>
 <script>
   import Navigation from './Navigation'
+  import FooterSection from './FooterSection'
   export default {
     name: 'Ebook',
     data () {
@@ -51,7 +47,7 @@
       this.loadEbooks()
     },
     components: {
-      Navigation
+      Navigation, FooterSection
     }
   }
 </script>
@@ -99,7 +95,7 @@
     }
   }
   .ebook-section {
-    padding: 70px 0;
+    padding: 50px 0;
     h2 {
       font-size: 2rem;
     }
@@ -116,6 +112,16 @@
           -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
           background-color: black;
+      }
+    }
+    .list-book{
+      margin: 25px 0;
+      .book-content {
+        min-height: 350px;
+        .cover-book {
+          width: 100%;
+          height: 250px;
+        }
       }
     }
   }

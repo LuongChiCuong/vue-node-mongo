@@ -4,7 +4,8 @@
       <nav>
         <div class="nav-wrapper white grey-text text-darken-4">
           <!-- <a href="#!" class="brand-logo center black-text" :class="{active: activeMenu}">{{logo}}</a> -->
-          <router-link class="brand-logo center black-text" :to="{ name: 'app'}" :class="{active: activeMenu}">
+          <router-link class="brand-logo center black-text" :to="{ name: 'app'}"
+            :class="{active: activeMenu}">
             CreativeLang
           </router-link>
           <!-- <div class="skew-bg"></div> -->
@@ -115,6 +116,8 @@ export default {
     /*logo style*/
     .brand-logo {
       z-index: 22;
+      font-family: Bellico;
+      font-size: 3rem;
     }
     .brand-logo.active{
       color: #64ffda !important;

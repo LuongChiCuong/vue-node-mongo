@@ -37,24 +37,25 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less">
   .bottom-nav {
     position: fixed;
     bottom: 0;
     color: white;
-    height: 30px;
+    height: 50px;
+    .bottom-tag-list {
+      height: 100%;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      margin-top: 0;
+      li {
+        margin: 0 20px;
+        color: #64ffda;
+        cursor: pointer;
+      }
+    }
   }
-  .bottom-tag-list {
-    height: 30px;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    margin-top: 0;
-  }
-  .bottom-tag-list li {
-    margin: 0 20px;
-    color: #64ffda;
-    cursor: pointer;
-  }
+
 </style>

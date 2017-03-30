@@ -7,10 +7,10 @@
             <img :src="'https://www.google.com/s2/favicons?domain=' + bm.url" class="favicon">
           </div>
           <div class="card-content">
-            <b>{{ bm.title }}</b>
+            <b class="title">{{ bm.title }}</b>
             <br/>
-            <i>{{ bm.url }}</i>
-            <p>{{ bm.description }}</p>
+            <i class="url-text">{{ bm.url }}</i>
+            <p class="description">{{ bm.description }}</p>
             <tags :tagValue="bm.tags"></tags>
             <a :href="bm.url" target="_blank">Open in new tab</a>
           </div>
@@ -80,26 +80,38 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less">
   .url-container {
     padding: 20px;
+    .item-content {
+      display: flex;
+      flex-direction: column;
+      min-height: 250px;
+    }
   }
-  .item-content {
-    display: flex;
-    flex-direction: column;
-  }
+  // separate to make searchResult inherit style
   .card-icon {
     position: absolute;
+    .favicon {
+      width: 30px;
+      height: 30px;
+    }
   }
   .card-content {
     margin-left: 40px;
+    b{
+      font-size: 16px;
+      line-height: 18px;
+    }
+    .url-text {
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .description {
+      min-height: 100px;
+    }
   }
-  .card-content b{
-    font-size: 16px;
-    line-height: 18px;
-  }
-  .favicon {
-    width: 30px;
-    height: 30px;
-  }
+
 </style>
