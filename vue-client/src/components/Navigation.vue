@@ -116,8 +116,11 @@ export default {
     /*logo style*/
     .brand-logo {
       z-index: 22;
-      font-family: Bellico;
+      // font-family: Bellico;
+      font-family: OAF;
       font-size: 3rem;
+      letter-spacing: 5px;
+      margin-top: -5px;
     }
     .brand-logo.active{
       color: #64ffda !important;
