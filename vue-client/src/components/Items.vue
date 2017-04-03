@@ -9,7 +9,7 @@
           <div class="card-content">
             <b class="title">{{ bm.title }}</b>
             <br/>
-            <i class="url-text">{{ bm.url }}</i>
+            <!-- <i class="url-text">{{ bm.url }}</i> -->
             <p class="description">{{ bm.description }}</p>
             <tags :tagValue="bm.tags"></tags>
             <a :href="bm.url" target="_blank">Open in new tab</a>
@@ -49,7 +49,9 @@ export default {
   },
   methods: {
     loadBookmarks: function () {
-      this.$http.get('http://localhost:3000/bookmarks').then((res) => {
+      var api = 'http://creativelang-97156.app.xervo.io/bookmarks'
+      // var api = 'http://localhost:3000/bookmarks'
+      this.$http.get(api).then((res) => {
         this.bookmarks = res.body
       }, (err) => {
         console.log(err)

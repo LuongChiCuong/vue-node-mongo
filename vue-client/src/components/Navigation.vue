@@ -130,6 +130,7 @@ export default {
     /*menu: div contain hamburger icon*/
     .menu {
       width: 60px;
+      margin-left: 15px;
       cursor: pointer;
       overflow: hidden;
       z-index: 19;
@@ -251,6 +252,7 @@ export default {
 
     .finder {
       width: 60px;
+      margin-right: 15px;
       cursor: pointer;
     }
   }

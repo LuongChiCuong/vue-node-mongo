@@ -36,7 +36,9 @@
     },
     methods: {
       loadEbooks: function () {
-        this.$http.get('http://localhost:3000/ebooks').then((res) => {
+        var api = 'http://creativelang-97156.app.xervo.io/ebooks'
+        // var api = 'http://localhost:3000/ebooks'
+        this.$http.get(api).then((res) => {
           this.ebooks = res.body
         }, (err) => {
           console.log(err)

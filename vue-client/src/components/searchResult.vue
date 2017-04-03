@@ -60,8 +60,9 @@
     },
     methods: {
       callSearchAPI: function (text) {
-        console.log(text)
-        this.$http.post('http://localhost:3000/bookmarks/search',
+        var api = 'http://creativelang-97156.app.xervo.io/bookmarks/search'
+        // var api = 'http://localhost:3000/bookmarks/search'
+        this.$http.post(api,
         {'query': text}).then((res) => {
           if (_.isEmpty(res.body) || _.isEmpty(res)) {
             this.bookmarks = []
